@@ -89,7 +89,7 @@ class Trainer:
                 X = X.flatten(start_dim=1).to(device=self.device, dtype=torch.float32)
 
                 # --------- train discriminator --------- #
-                # min -[log(D(x)) + log(1-D(self.G(z)))]
+                # min -[log(D(x)) + log(1-D(G(z)))]
                 z = torch.randn((X.shape[0], self.config['z_dim']), device=self.device)
                 fake = self.G(z).detach()
                 realscore, fakescore = self.D(X), self.D(fake)
