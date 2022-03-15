@@ -1,5 +1,5 @@
 use_gpu: true
-exp_name: mnist
+exp_name: ~
 
 dataroot: ../../data
 z_dim: 100
